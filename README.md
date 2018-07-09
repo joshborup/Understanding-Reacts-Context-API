@@ -65,32 +65,6 @@ In this example we simply wrap our App component with the ContextProvider and th
 
 ```js
 
-<AppContext.Consumer>
-    {(context) => {
-        let students = context.students.map(student => {
-            return <div key={student.id}>
-                        {student.name}
-                    </div>
-        })
-        return <div>
-                    {students}
-                        Number: {context.test}
-                        <button onClick={context.methods.inc}>Increment</button>
-                        <button onClick={context.methods.dec}>Decrement</button>
-                        <button onClick={context.methods.getStudents}>Get Students</button>
-                </div>
-    }}
-</AppContext.Consumer>
-    
-
-```
-
-## The Provider (index.js)
-
-any app that is looking for 
-
-```js
-
 import React, { Component } from 'react';
 import AppProvider, { AppContext } from '../context/ContextProvider';
 
@@ -120,3 +94,8 @@ export default class Home extends Component {
     }
 }
 ```
+
+## The Provider (index.js)
+
+any app that is looking for 
+
