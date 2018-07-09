@@ -4,7 +4,7 @@
 
 You must first create context with `React.createContext()` the context or store component is a normal stateful or stateless component that simply wraps `{this.props.children}` in the variable we set equal to our invoked `React.createContext()` method (i.e. `AppContext`);
 
-Since we are passing state down through props, you can either manually pass each method created in the component as props, or you can create a methods object to store your methods in which will be passed with state and can be accessed on `context.methods`
+Since we are passing state down through props, we can either manually pass each method down as props, or you can create a      `methods` object in state to store your methods. The `methods` object will be passed with state and can be accessed on `context.methods`
 
 The Context API allows us to make AJAX calls from within the our provider without needing extra packages like `redux-thunk`
 
