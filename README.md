@@ -90,7 +90,7 @@ ReactDOM.render(
 
 ##  The Consumer (Home.js)
 
-Any app that is looking to use values from the global state (i.e. the state in `ContextProvider.js`) must have a consumer, the consumer looks for the closest provider in the componenet tree so it is possible to have mulitples providers in a single app.
+Any component that is looking to use values from the global state (i.e. the state in `ContextProvider.js`) must have a consumer, the consumer looks for the closest provider in the componenet tree so it is possible to have mulitples providers in a single app.
 
 In this example we simply wrap our App component with the ContextProvider and then we access our values using a function with a default context parameter, this context parameter is an object that contains all of the values we pass down as props in our Context Provider
 
