@@ -65,7 +65,7 @@ export default class ContextProvider extends Component {
 }
 ```
 
-## The Consumer (Home.js)
+##  The Provider (index.js)
 
 Any app that is looking to use values from the global state (i.e. the state in `ContextProvider.js`) must have a consumer, the consumer looks for the closest provider in the componenet tree so it is possible to have mulitples providers in a single app.
 
@@ -90,7 +90,7 @@ ReactDOM.render(
 
 ```
 
-## The Provider (index.js)
+##  The Consumer (Home.js)
 
 Any component that needs to use values from the global state (i.e. `ContextProvider.js`) needs to import the `AppContext` method from the `ContextProvider.js` file. Any portion of our app that needs the global state will call `AppContext.Consumer` and then a use a function with the global state passed in as a value, in the instance it gets attached the `context` variable.
 
