@@ -3,7 +3,7 @@ import axios from 'axios';
 export const AppContext = React.createContext();
 
 
-export default class AppProvider extends Component {
+export default class ContextProvider extends Component {
     constructor(){
         super()
         this.state = {

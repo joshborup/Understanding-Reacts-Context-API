@@ -1,6 +1,6 @@
 # Understanding react 16.3 Context API
 
-## The Data Store (AppProvider.js)
+## The Data Store (ContextProvider.js)
 
 You must create context with `React.createContext()` and then the component is a normal stateful component that simply wraps `{this.props.children}` in the variable we set with `React.createContext()` (i.e. `AppContext`);
 
@@ -14,7 +14,7 @@ import axios from 'axios';
 export const AppContext = React.createContext();
 
 
-export default class AppProvider extends Component {
+export default class ContextProvider extends Component {
     constructor(){
         super()
         this.state = {
@@ -57,4 +57,40 @@ export default class AppProvider extends Component {
 }
 ```
 
+## The Consumer (Home.js)
 
+Any app that is looking to use values from the global state (i.e. the state in `ContextProvider.js`) must have a consumer, the consumer looks for the closest provider in the componenet tree so it is possible to have mulitples providers in a single app.
+
+In this example we simply wrap our App component with the ContextProvider and then we access our values using a function with a default context parameter, this context parameter is an object that contains all of the values we pass down as props in our Context Provider
+
+```js
+
+<AppContext.Consumer>
+    {(context) => {
+        let students = context.students.map(student => {
+            return <div key={student.id}>
+                        {student.name}
+                    </div>
+        })
+        return <div>
+                    {students}
+                        Number: {context.test}
+                        <button onClick={context.methods.inc}>Increment</button>
+                        <button onClick={context.methods.dec}>Decrement</button>
+                        <button onClick={context.methods.getStudents}>Get Students</button>
+                </div>
+    }}
+</AppContext.Consumer>
+    
+
+```
+
+## The Provider (index.js)
+
+any app that is looking for 
+
+```js
+<AppContext.Provider value={this.state}>
+            {this.props.children}
+</AppContext.Provider>
+```

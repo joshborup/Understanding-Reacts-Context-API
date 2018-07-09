@@ -15,7 +15,7 @@ export default class Home extends Component {
                         })
                         return (<div>
                                 {students}
-                                {context.test}
+                                Number: {context.test}
                                 <button onClick={context.methods.inc}>Increment</button>
                                 <button onClick={context.methods.dec}>Decrement</button>
                                 <button onClick={context.methods.getStudents}>Get Students</button>
