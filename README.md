@@ -72,9 +72,30 @@ Any app that is looking to use values from the global state (i.e. the state in `
 In this example we simply wrap our App component with the ContextProvider and then we access our values using a function with a default context parameter, this context parameter is an object that contains all of the values we pass down as props in our Context Provider
 
 ```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
+import ContextProvider from './context/ContextProvider';
+import './index.css';
+import App from './App';
+
+ReactDOM.render(
+
+<BrowserRouter>
+    <ContextProvider>
+        <App />
+    </ContextProvider>
+</BrowserRouter>    
+, document.getElementById('root'));
+
+```
+
+## The Provider (index.js)
+
+Any component that needs to use values from the global state (i.e. `ContextProvider.js`) needs to import the `AppContext` method from the `ContextProvider.js` file. Any portion of our app that needs the global state will call `AppContext.Consumer` and then a use a function with the global state passed in as a value, in the instance it gets attached the `context` variable.
 
 import React, { Component } from 'react';
-import AppProvider, { AppContext } from '../context/ContextProvider';
+import { AppContext } from '../context/ContextProvider';
 
 export default class Home extends Component {
     render() {
@@ -102,8 +123,4 @@ export default class Home extends Component {
     }
 }
 ```
-
-## The Provider (index.js)
-
-any app that is looking for 
 
