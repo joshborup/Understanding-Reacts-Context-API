@@ -94,6 +94,7 @@ ReactDOM.render(
 
 Any component that needs to use values from the global state (i.e. `ContextProvider.js`) needs to import the `AppContext` method from the `ContextProvider.js` file. Any portion of our app that needs the global state will call `AppContext.Consumer` and then a use a function with the global state passed in as a value, in the instance it gets attached the `context` variable.
 
+```js
 import React, { Component } from 'react';
 import { AppContext } from '../context/ContextProvider';
 
