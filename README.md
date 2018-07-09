@@ -67,7 +67,7 @@ export default class ContextProvider extends Component {
 
 ##  The Provider (index.js)
 
-Any App that needs to use values from the global state ( i.e. `ContextProvider.js` ) will need to wrap the top of thier component tree with the `ContextProvider` component from the `ContextProvider.js` file. Because this is the only provider in our app, any consumer within the component tree will draw from this provider.
+Any App that needs to use values from the global state ( i.e. `ContextProvider.js` ) will need to wrap the top of thier component tree with the `ContextProvider` component from the `ContextProvider.js` file. Since this is the only provider in our app, any consumer within the component tree will draw from this provider.
 
 ```js
 import React from 'react';
