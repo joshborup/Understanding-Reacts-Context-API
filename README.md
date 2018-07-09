@@ -6,7 +6,7 @@ You must first create context with `React.createContext()` the context or store 
 
 Since we are passing state down through props, we can either manually pass each method down as props, or you can create a      `methods` object in state to store your methods. The `methods` object will be passed with state and can be accessed on `context.methods`
 
-The Context API allows us to make AJAX calls from within the our provider without needing extra packages like `redux-thunk`
+The Context API allows us to make AJAX calls from within our provider without needing extra packages like `redux-thunk`
 
 ```js
 import React, { Component } from 'react';
