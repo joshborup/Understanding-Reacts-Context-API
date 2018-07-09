@@ -2,7 +2,7 @@
 
 ## The Data Store (ContextProvider.js)
 
-You must create context with `React.createContext()` and then the component is a normal stateful component that simply wraps `{this.props.children}` in the variable we set with `React.createContext()` (i.e. `AppContext`);
+You must first create context with `React.createContext()` the context or store component is a normal stateful or stateless component that simply wraps `{this.props.children}` in the variable we set equal to our invoked `React.createContext()` method (i.e. `AppContext`);
 
 Since we are passing state down through props, you can either manually pass each method created in the component as props, or you can create a methods object to store your methods in which will be passed with state and can be accessed on `context.methods`
 
