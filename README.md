@@ -11,12 +11,17 @@ The Context API allows us to make AJAX calls from within the our provider withou
 ```js
 import React, { Component } from 'react';
 import axios from 'axios';
+
+//the context gets exported so we can import it into the components where we need global state
 export const AppContext = React.createContext();
 
 
 export default class ContextProvider extends Component {
     constructor(){
         super()
+// the state is all we pass so, we just need to put any values we want attached to the child components props into state.
+
+// optionally you can use a methods object so you can send all the methods with state, or you would just need to pass the methods individually through prop naming and passing
         this.state = {
             test: 0,
             students: [],
@@ -48,7 +53,10 @@ export default class ContextProvider extends Component {
     }
 
  
+//this.props.children will allow us to display anything that gets wrapped with our ContextProvider while also sending the state as a value of our provider. State gets attached to props and can be accessed by any consumer within the component tree that is wrapped by the provider
 
+
+//technically the consumer will search for the closest provider but if you have just one provider than it will search for your only provider
     render() {
         return  <AppContext.Provider value={this.state}>
                      {this.props.children}
