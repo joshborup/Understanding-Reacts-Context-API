@@ -1,6 +1,6 @@
 # Understanding react 16.3 Context API
 
-## The Data Store (AppProvider)
+## The Data Store (AppProvider.js)
 
 You must create context with `React.createContext()` and then the component is a normal stateful component that simply wraps `{this.props.children}` in the variable we set with `React.createContext()` (i.e. `AppContext`);
 
